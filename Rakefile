@@ -2,7 +2,7 @@ require "bundler/setup"
 require "rake/testtask"
 require "rake/extensiontask"
 require "rake/javaextensiontask"
-require "rubocop/rake_task"
+#require "rubocop/rake_task"
 require 'puma/detect'
 require 'rubygems/package_task'
 require 'bundler/gem_tasks'
@@ -11,7 +11,7 @@ gemspec = Gem::Specification.load(Dir['*.gemspec'].first)
 Gem::PackageTask.new(gemspec).define
 
 # Add rubocop task
-RuboCop::RakeTask.new
+#RuboCop::RakeTask.new
 
 spec = Gem::Specification.load("puma.gemspec")
 
@@ -97,4 +97,4 @@ namespace :test do
   end
 end
 
-task :default => [:rubocop, "test:all"]
+#task :default => [:rubocop, "test:all"]
